@@ -18,7 +18,7 @@ var disableScroll = {
      * @param {object} [options] - Change the initial options
      */
     on: function (element, options) {
-        this.element = element || document.body;
+        this.element = element;
         this.options = this._extend(this.options, options);
 
         if (this.options.disableWheel) {
@@ -29,8 +29,8 @@ var disableScroll = {
 
         if (this.options.disableScrollbar) {
             this.lockToScrollPos = [
-                this.element.scrollLeft,
-                this.element.scrollTop
+                this.window.scrollY,
+                this.window.scrollX
             ];
             this._disableScrollbarFn = this._handleScrollbar.bind(this);
             document.addEventListener('scroll', this._disableScrollbarFn);
