@@ -38,8 +38,8 @@ var disableScroll = {
 
         if (this.options.disableScrollbar) {
             this.lockToScrollPos = [
-                this.window.scrollY,
-                this.window.scrollX
+                window.scrollY,
+                window.scrollX
             ];
             this._disableScrollbarFn = this._handleScrollbar.bind(this);
             document.addEventListener('scroll', this._disableScrollbarFn);
